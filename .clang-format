@@ -1,0 +1,66 @@
+---
+# Specifies the language standard to use (C, Cpp, etc.). Your code is in C.
+Language: Cpp
+
+# 1. Spacing in Expressions
+# Space around binary operators (+, -, =, etc.)
+SpaceBeforeAssignmentOperators: true
+# SpaceAfterAssignmentOperators: true
+SpaceAroundPointerQualifiers: Default
+SpaceAfterControlStatementKeyword: true
+
+# 4. Statement Formatting
+# Each statement starts on a new line
+MaxEmptyLinesToKeep: 1
+
+# 6. Indentation
+# Indent width set to 2 spaces and use spaces instead of tabs
+IndentWidth: 2
+UseTab: Never
+IndentCaseLabels: true
+
+# 7. Line Breaks and Continuation
+# Column limit set to 120 characters
+ColumnLimit: 120
+# Continuation indent width
+ContinuationIndentWidth: 2
+
+# Additional settings for brace wrapping and alignment
+BreakBeforeBraces: Custom
+#BraceBreakingStyle: Custom
+BraceWrapping:
+  AfterCaseLabel:  true
+  AfterClass:      true
+  AfterControlStatement: true
+  AfterEnum:       true
+  AfterFunction:   true
+  AfterNamespace:  true
+  AfterObjCDeclaration: true
+  AfterStruct:     true
+  AfterUnion:      true
+  AfterExternBlock: true
+  BeforeCatch:     true
+  BeforeElse:      true
+  BeforeLambdaBody: true
+  BeforeWhile:     false
+  IndentBraces:    false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+  #AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AllowShortFunctionsOnASingleLine: All
+
+# 8. Pointer and Reference Alignment
+PointerAlignment: Left
+
+# Define the order of #include's
+IncludeCategories:
+  - Regex:           '^<.*\.h>'
+    Priority:        1
+  - Regex:           '^".*\.h"'
+    Priority:        2
+  - Regex:           '.*'
+    Priority:        3
+...

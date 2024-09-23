@@ -1,0 +1,4 @@
+build/
+py_data_parser/parsed_data/leagues
+.vscode/
+data/
