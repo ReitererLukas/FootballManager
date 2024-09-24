@@ -14,6 +14,8 @@ Game::Game(ConfigReader& reader)
 
 void Game::startGame()
 {
+  current_view_ = GameView::HOME;
+
   Questioner name_question = CLI::simpleQuestion("Manager name?");
   manager_name_ = name_question.getAnswer();
   CLI::message("Hello coach " + manager_name_);
@@ -23,7 +25,16 @@ void Game::startGame()
   team_ = teams_.at(stoi(team_question.getAnswer()));
   CLI::message(team_->getName() + " is happy to have you signed coach!");
   CLI::horizontalLine();
+}
 
+void Game::gameLoop()
+{
+  while(true)
+  {
+    std::string input;
+    CLI::readCLI(input);
+    command_manager_.executeCommand(input, *this);
+  }
 }
 
 

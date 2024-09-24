@@ -13,13 +13,15 @@
 
 class CLI
 {
-private:
-  static void readCLI(std::string&);
-
 public:
+  CLI() = delete;
+  CLI(const CLI&) = delete;
+  ~CLI() = delete;
+
   static Questioner simpleQuestion(std::string);
   static void message(std::string);
   static void horizontalLine();
+  static void readCLI(std::string&);
 
   template <typename T>
   static Questioner selectionFromList(std::string question, std::vector<std::shared_ptr<T>> list)
